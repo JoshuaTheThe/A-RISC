@@ -67,3 +67,7 @@
 - branch immediates are sign extended
 - i8,i4 in branch,memory access is sign extended
 - the carry for ADD,SUB,XOR,ORR,AND is always the carry of the ADD/SUB node.
+
+# Implementation
+- the design is very simple, i am not sure if all of the ops even work (lol)
+![design](./design.png)
