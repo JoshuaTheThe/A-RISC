@@ -1,4 +1,4 @@
-# Very simple 16 bit architecture
+# A-RISC (Aderyn's RISC), Very simple 16 bit architecture
 
 # Register File
 | Index | MNemonic | Description | width (bits)
