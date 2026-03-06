@@ -47,6 +47,12 @@
 |`000001`| `POP`   | `$sr += 4, rd <= *($sr)` |
 |`000010`| `Rnc` | `$pr <= $lr` conditionally (1) (but invert) |
 |`000011`| `Rcc` | `$pr <= $lr` conditionally (1) |
+|`000100`| `AL.32` | `$rd <= *($rs + i8)` (2), but set the BLOCK output pin high to block other cores |
+|`000101`| `AS.32` | `*($rd + i8) <= $rs` (2), but set the BLOCK output pin high to block other cores |
+|`000110`| `AL.16` | `$rd.low <= *($rs + i8).low` (2), but set the BLOCK output pin high to block other cores |
+|`000111`| `AS.16` | `*($rd + i8).low <= $rs.low` (2), but set the BLOCK output pin high to block other cores |
+|`001001`| `AL.8` | `$rd.low.low <= *($rs + i8).low.low` (2), but set the BLOCK output pin high to block other cores |
+|`001010`| `AS.8` | `*($rd + i8).low.low <= $rs.low.low` (2), but set the BLOCK output pin high to block other cores |
 
 ## 1.
 - use i4 in a multiplexer of the flags, if it is true, execute, otherwise, do not. (sign extend i23)
