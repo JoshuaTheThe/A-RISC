@@ -74,6 +74,8 @@ segments: Segments;
 |`001010`| `SSEG` | `segments($rd) <= $rs, $rs2`, nop in usermode |
 |`001011`| `GSEG` | `$rd, $rs2 <= segments($rd)`, nop in usermode |
 |`001100`| `BFAR` | `$pr, $cs <= i19, $rs` nop in usermode |
+|`001101`| `SYSENTER` | `r30, r31 <= $pr, $cs, <= $pr, $cs <= 16, 0, $usr <= 0` trashes r30, r31 |
+|`001110`| `SYSEXIT` | `$pr, $cs <= r30, r31, $usr <= 1` nop in usermode |
 
 ## 1.
 - use i4 in a multiplexer of the flags, if it is true, execute, otherwise, do not. (sign extend i23)
