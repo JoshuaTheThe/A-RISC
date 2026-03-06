@@ -9,6 +9,8 @@
 | 2 | `$sr` | Stack Register | 32 |
 | 3..31 | `$rN` | Register | 32 |
 
+- also `$pr'` and `$cs'`
+
 # Flags
 | MNemonic | Description |
 |----------|-------------|
@@ -28,13 +30,14 @@
 
 - in the processor we basically have
 ```rust
-struct Segments
+struct Segment
 {
-        phys_bases: [u32; 256],
-        phys_lengths: [u32; 256],
+        phys_base: u32
+        phys_length: u29,
+        execute: bool, read: bool, write: bool
 }
 
-segments: Segments;
+segments: [Segments; 256];
 ```
 
 # Opcode
@@ -76,6 +79,7 @@ segments: Segments;
 |`001100`| `BFAR` | `$pr, $cs <= i19, $rs` nop in usermode |
 |`001101`| `SYSENTER` | `r30, r31 <= $pr, $cs, <= $pr, $cs <= 16, 0, $usr <= 0` trashes r30, r31 |
 |`001110`| `SYSEXIT` | `$pr, $cs <= r30, r31, $usr <= 1` nop in usermode |
+|`001111`| `IRET` | `$pr, $cs <= $pr', $cs'` nop in usermode |
 
 ## 1.
 - use i4 in a multiplexer of the flags, if it is true, execute, otherwise, do not. (sign extend i23)
@@ -83,6 +87,9 @@ segments: Segments;
 
 ## 2.
 - this being an offset is optional
+
+# Interrupts
+- uh `$pr'`, `$cs'` <= `$pr`, `$cs`
 
 # opcode encoding
 | bits | desc |
