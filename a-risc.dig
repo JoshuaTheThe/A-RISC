@@ -4036,8 +4036,12 @@
       <elementName>Out</elementName>
       <elementAttributes>
         <entry>
+          <string>Description</string>
+          <string>Write instead of Read</string>
+        </entry>
+        <entry>
           <string>Label</string>
-          <string>R/W</string>
+          <string>W</string>
         </entry>
       </elementAttributes>
       <pos x="1220" y="-660"/>
