@@ -23,7 +23,7 @@
 | Code | MNemonic Prefix | Operation
 |---|---|---|
 | `0000` | `ADD` | `$rd <= $rs + $rs2 + $carry` |
-| `0001` | `SUB` | `$rd <= $rs - $rs2 - $carry` |
+| `0001` | `SUB` | `$rd <= $rs + ~$rs2 + !$carry` |
 | `0010` | `EOR` | `$rd <= $rs ^ $rs2` |
 | `0011` | `ORR` | `$rd <= $rs \| $rs2` |
 | `0100` | `AND` | `$rd <= $rs & $rs2` |
