@@ -18,6 +18,24 @@
 | `$sg`| sign of the result |
 | `$od` | was result odd |
 | `$alw`| always |
+| `$usr` | User Mode |
+
+# Segmentation
+- im too lazy to make page tables, so this is better
+| MNemonic | Description |
+|----------|-------------|
+| `$cs`    | current segment, 8 bit |
+
+- in the processor we basically have
+```rust
+struct Segments
+{
+        phys_bases: [u32; 256],
+        phys_lengths: [u32; 256],
+}
+
+segments: Segments;
+```
 
 # Opcode
 | Code | MNemonic Prefix | Operation
@@ -53,6 +71,9 @@
 |`000111`| `AS.16` | `*($rd + i8).low <= $rs.low` (2), but set the BLOCK output pin high to block other cores |
 |`001000`| `AL.8` | `$rd.low.low <= *($rs + i8).low.low` (2), but set the BLOCK output pin high to block other cores |
 |`001001`| `AS.8` | `*($rd + i8).low.low <= $rs.low.low` (2), but set the BLOCK output pin high to block other cores |
+|`001010`| `SSEG` | `segments($rd) <= $rs, $rs2`, nop in usermode |
+|`001011`| `GSEG` | `$rd, $rs2 <= segments($rd)`, nop in usermode |
+|`001100`| `BFAR` | `$pr, $cs <= i19, $rs` nop in usermode |
 
 ## 1.
 - use i4 in a multiplexer of the flags, if it is true, execute, otherwise, do not. (sign extend i23)
