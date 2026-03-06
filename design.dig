@@ -112,62 +112,6 @@
       <pos x="-360" y="780"/>
     </visualElement>
     <visualElement>
-      <elementName>Tunnel</elementName>
-      <elementAttributes>
-        <entry>
-          <string>rotation</string>
-          <rotation rotation="2"/>
-        </entry>
-        <entry>
-          <string>NetName</string>
-          <string>D</string>
-        </entry>
-      </elementAttributes>
-      <pos x="-820" y="1120"/>
-    </visualElement>
-    <visualElement>
-      <elementName>Tunnel</elementName>
-      <elementAttributes>
-        <entry>
-          <string>rotation</string>
-          <rotation rotation="2"/>
-        </entry>
-        <entry>
-          <string>NetName</string>
-          <string>R/W</string>
-        </entry>
-      </elementAttributes>
-      <pos x="-820" y="1140"/>
-    </visualElement>
-    <visualElement>
-      <elementName>Tunnel</elementName>
-      <elementAttributes>
-        <entry>
-          <string>rotation</string>
-          <rotation rotation="2"/>
-        </entry>
-        <entry>
-          <string>NetName</string>
-          <string>D</string>
-        </entry>
-      </elementAttributes>
-      <pos x="-820" y="1160"/>
-    </visualElement>
-    <visualElement>
-      <elementName>Tunnel</elementName>
-      <elementAttributes>
-        <entry>
-          <string>rotation</string>
-          <rotation rotation="2"/>
-        </entry>
-        <entry>
-          <string>NetName</string>
-          <string>R/W</string>
-        </entry>
-      </elementAttributes>
-      <pos x="-820" y="1180"/>
-    </visualElement>
-    <visualElement>
       <elementName>a-risc.dig</elementName>
       <elementAttributes/>
       <pos x="-340" y="900"/>
@@ -246,10 +190,6 @@
       <p2 x="-340" y="800"/>
     </wire>
     <wire>
-      <p1 x="-820" y="1120"/>
-      <p2 x="-800" y="1120"/>
-    </wire>
-    <wire>
       <p1 x="-460" y="900"/>
       <p2 x="-440" y="900"/>
     </wire>
@@ -264,14 +204,6 @@
     <wire>
       <p1 x="-360" y="820"/>
       <p2 x="-340" y="820"/>
-    </wire>
-    <wire>
-      <p1 x="-820" y="1140"/>
-      <p2 x="-800" y="1140"/>
-    </wire>
-    <wire>
-      <p1 x="-820" y="1160"/>
-      <p2 x="-800" y="1160"/>
     </wire>
     <wire>
       <p1 x="-360" y="760"/>
@@ -292,10 +224,6 @@
     <wire>
       <p1 x="-360" y="780"/>
       <p2 x="-340" y="780"/>
-    </wire>
-    <wire>
-      <p1 x="-820" y="1180"/>
-      <p2 x="-800" y="1180"/>
     </wire>
     <wire>
       <p1 x="-280" y="940"/>
