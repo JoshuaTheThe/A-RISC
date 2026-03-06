@@ -179,6 +179,21 @@
       <elementAttributes/>
       <pos x="-400" y="840"/>
     </visualElement>
+    <visualElement>
+      <elementName>VDD</elementName>
+      <elementAttributes/>
+      <pos x="-360" y="920"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Ground</elementName>
+      <elementAttributes/>
+      <pos x="-360" y="940"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Ground</elementName>
+      <elementAttributes/>
+      <pos x="-360" y="960"/>
+    </visualElement>
   </visualElements>
   <wires>
     <wire>
@@ -188,6 +203,10 @@
     <wire>
       <p1 x="-360" y="800"/>
       <p2 x="-340" y="800"/>
+    </wire>
+    <wire>
+      <p1 x="-360" y="960"/>
+      <p2 x="-340" y="960"/>
     </wire>
     <wire>
       <p1 x="-460" y="900"/>
@@ -214,6 +233,10 @@
       <p2 x="-260" y="920"/>
     </wire>
     <wire>
+      <p1 x="-360" y="920"/>
+      <p2 x="-340" y="920"/>
+    </wire>
+    <wire>
       <p1 x="-420" y="840"/>
       <p2 x="-400" y="840"/>
     </wire>
@@ -228,6 +251,10 @@
     <wire>
       <p1 x="-280" y="940"/>
       <p2 x="-260" y="940"/>
+    </wire>
+    <wire>
+      <p1 x="-360" y="940"/>
+      <p2 x="-340" y="940"/>
     </wire>
   </wires>
   <measurementOrdering/>
