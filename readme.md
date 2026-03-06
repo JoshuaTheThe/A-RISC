@@ -1,5 +1,5 @@
 # A-RISC (Aderyn's RISC), Very simple 16 bit architecture
-- notice registers 8-13 are optional
+- notice registers 4-13 are optional
 
 # Register File
 | Index | MNemonic | Description | width (bits)
