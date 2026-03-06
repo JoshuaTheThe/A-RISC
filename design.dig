@@ -64,7 +64,7 @@
         </entry>
         <entry>
           <string>Frequency</string>
-          <int>256</int>
+          <int>16</int>
         </entry>
       </elementAttributes>
       <pos x="-460" y="900"/>
@@ -155,12 +155,12 @@
           <int>128</int>
         </entry>
         <entry>
-          <string>Bits</string>
-          <int>8</int>
-        </entry>
-        <entry>
           <string>graphicWidth</string>
           <int>128</int>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>8</int>
         </entry>
       </elementAttributes>
       <pos x="-340" y="620"/>

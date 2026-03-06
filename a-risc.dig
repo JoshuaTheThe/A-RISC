@@ -4251,20 +4251,10 @@
         </entry>
         <entry>
           <string>NetName</string>
-          <string>NX</string>
+          <string>N</string>
         </entry>
       </elementAttributes>
-      <pos x="500" y="0"/>
-    </visualElement>
-    <visualElement>
-      <elementName>Tunnel</elementName>
-      <elementAttributes>
-        <entry>
-          <string>NetName</string>
-          <string>NX</string>
-        </entry>
-      </elementAttributes>
-      <pos x="200" y="-620"/>
+      <pos x="140" y="-720"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -4275,10 +4265,10 @@
         </entry>
         <entry>
           <string>NetName</string>
-          <string>N</string>
+          <string>EXECUTE</string>
         </entry>
       </elementAttributes>
-      <pos x="140" y="-720"/>
+      <pos x="500" y="0"/>
     </visualElement>
   </visualElements>
   <wires>
@@ -5257,10 +5247,6 @@
     <wire>
       <p1 x="380" y="-620"/>
       <p2 x="400" y="-620"/>
-    </wire>
-    <wire>
-      <p1 x="180" y="-620"/>
-      <p2 x="200" y="-620"/>
     </wire>
     <wire>
       <p1 x="920" y="-240"/>
