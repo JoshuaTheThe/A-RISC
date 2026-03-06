@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <circuit>
   <version>2</version>
-  <attributes/>
+  <attributes>
+    <entry>
+      <string>romContent</string>
+      <romList>
+        <roms/>
+      </romList>
+    </entry>
+  </attributes>
   <visualElements>
     <visualElement>
       <elementName>Register</elementName>
@@ -3986,7 +3993,7 @@
           <string>Di</string>
         </entry>
       </elementAttributes>
-      <pos x="-100" y="-460"/>
+      <pos x="-140" y="-320"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -4000,7 +4007,7 @@
           <string>RMAR_DIR</string>
         </entry>
       </elementAttributes>
-      <pos x="-140" y="-400"/>
+      <pos x="-200" y="-360"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -4014,7 +4021,7 @@
           <string>QL</string>
         </entry>
       </elementAttributes>
-      <pos x="-140" y="-340"/>
+      <pos x="-220" y="-340"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -4031,20 +4038,6 @@
       <pos x="-140" y="-280"/>
     </visualElement>
     <visualElement>
-      <elementName>In</elementName>
-      <elementAttributes>
-        <entry>
-          <string>Label</string>
-          <string>D_i</string>
-        </entry>
-        <entry>
-          <string>Bits</string>
-          <int>8</int>
-        </entry>
-      </elementAttributes>
-      <pos x="-120" y="-460"/>
-    </visualElement>
-    <visualElement>
       <elementName>Out</elementName>
       <elementAttributes>
         <entry>
@@ -4052,14 +4045,14 @@
           <string>R/W</string>
         </entry>
       </elementAttributes>
-      <pos x="-120" y="-400"/>
+      <pos x="-120" y="-240"/>
     </visualElement>
     <visualElement>
       <elementName>Out</elementName>
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>D_o</string>
+          <string>D</string>
         </entry>
         <entry>
           <string>Bits</string>
@@ -4081,6 +4074,30 @@
         </entry>
       </elementAttributes>
       <pos x="-120" y="-280"/>
+    </visualElement>
+    <visualElement>
+      <elementName>PinControl</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>8</int>
+        </entry>
+      </elementAttributes>
+      <pos x="-200" y="-340"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>RMAR_DIR</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-140" y="-240"/>
     </visualElement>
   </visualElements>
   <wires>
@@ -4203,10 +4220,6 @@
     <wire>
       <p1 x="340" y="-400"/>
       <p2 x="360" y="-400"/>
-    </wire>
-    <wire>
-      <p1 x="-140" y="-400"/>
-      <p2 x="-120" y="-400"/>
     </wire>
     <wire>
       <p1 x="700" y="400"/>
@@ -4613,6 +4626,10 @@
       <p2 x="360" y="60"/>
     </wire>
     <wire>
+      <p1 x="-160" y="-320"/>
+      <p2 x="-140" y="-320"/>
+    </wire>
+    <wire>
       <p1 x="180" y="-320"/>
       <p2 x="200" y="-320"/>
     </wire>
@@ -4693,10 +4710,6 @@
       <p2 x="360" y="200"/>
     </wire>
     <wire>
-      <p1 x="-120" y="-460"/>
-      <p2 x="-100" y="-460"/>
-    </wire>
-    <wire>
       <p1 x="500" y="-460"/>
       <p2 x="520" y="-460"/>
     </wire>
@@ -4771,6 +4784,10 @@
     <wire>
       <p1 x="140" y="80"/>
       <p2 x="160" y="80"/>
+    </wire>
+    <wire>
+      <p1 x="-220" y="-340"/>
+      <p2 x="-200" y="-340"/>
     </wire>
     <wire>
       <p1 x="500" y="-340"/>
@@ -4965,6 +4982,10 @@
       <p2 x="160" y="100"/>
     </wire>
     <wire>
+      <p1 x="-200" y="-360"/>
+      <p2 x="-180" y="-360"/>
+    </wire>
+    <wire>
       <p1 x="560" y="-360"/>
       <p2 x="580" y="-360"/>
     </wire>
@@ -5039,6 +5060,10 @@
     <wire>
       <p1 x="380" y="-240"/>
       <p2 x="400" y="-240"/>
+    </wire>
+    <wire>
+      <p1 x="-140" y="-240"/>
+      <p2 x="-120" y="-240"/>
     </wire>
     <wire>
       <p1 x="140" y="240"/>

@@ -36,7 +36,7 @@
       <elementAttributes>
         <entry>
           <string>NetName</string>
-          <string>D_i</string>
+          <string>D</string>
         </entry>
       </elementAttributes>
       <pos x="-260" y="800"/>
@@ -54,11 +54,6 @@
         </entry>
       </elementAttributes>
       <pos x="-360" y="820"/>
-    </visualElement>
-    <visualElement>
-      <elementName>VDD</elementName>
-      <elementAttributes/>
-      <pos x="-360" y="840"/>
     </visualElement>
     <visualElement>
       <elementName>Clock</elementName>
@@ -111,7 +106,7 @@
         </entry>
         <entry>
           <string>NetName</string>
-          <string>D_o</string>
+          <string>D</string>
         </entry>
       </elementAttributes>
       <pos x="-360" y="780"/>
@@ -125,7 +120,7 @@
         </entry>
         <entry>
           <string>NetName</string>
-          <string>D_i</string>
+          <string>D</string>
         </entry>
       </elementAttributes>
       <pos x="-820" y="1120"/>
@@ -153,7 +148,7 @@
         </entry>
         <entry>
           <string>NetName</string>
-          <string>D_o</string>
+          <string>D</string>
         </entry>
       </elementAttributes>
       <pos x="-820" y="1160"/>
@@ -195,22 +190,8 @@
       <elementName>Tunnel</elementName>
       <elementAttributes>
         <entry>
-          <string>rotation</string>
-          <rotation rotation="2"/>
-        </entry>
-        <entry>
           <string>NetName</string>
-          <string>D_i</string>
-        </entry>
-      </elementAttributes>
-      <pos x="-360" y="920"/>
-    </visualElement>
-    <visualElement>
-      <elementName>Tunnel</elementName>
-      <elementAttributes>
-        <entry>
-          <string>NetName</string>
-          <string>D_o</string>
+          <string>D</string>
         </entry>
       </elementAttributes>
       <pos x="-260" y="920"/>
@@ -234,6 +215,25 @@
         </entry>
       </elementAttributes>
       <pos x="-260" y="900"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>R/W</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-420" y="840"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Not</elementName>
+      <elementAttributes/>
+      <pos x="-400" y="840"/>
     </visualElement>
   </visualElements>
   <wires>
@@ -274,20 +274,20 @@
       <p2 x="-800" y="1160"/>
     </wire>
     <wire>
-      <p1 x="-360" y="840"/>
-      <p2 x="-340" y="840"/>
-    </wire>
-    <wire>
       <p1 x="-360" y="760"/>
       <p2 x="-340" y="760"/>
     </wire>
     <wire>
-      <p1 x="-360" y="920"/>
-      <p2 x="-340" y="920"/>
-    </wire>
-    <wire>
       <p1 x="-280" y="920"/>
       <p2 x="-260" y="920"/>
+    </wire>
+    <wire>
+      <p1 x="-420" y="840"/>
+      <p2 x="-400" y="840"/>
+    </wire>
+    <wire>
+      <p1 x="-360" y="840"/>
+      <p2 x="-340" y="840"/>
     </wire>
     <wire>
       <p1 x="-360" y="780"/>
