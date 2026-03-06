@@ -3023,7 +3023,7 @@
       <elementAttributes>
         <entry>
           <string>RectHeight</string>
-          <int>71</int>
+          <int>70</int>
         </entry>
         <entry>
           <string>RectInside</string>
@@ -3035,7 +3035,7 @@
         </entry>
         <entry>
           <string>RectWidth</string>
-          <int>48</int>
+          <int>46</int>
         </entry>
       </elementAttributes>
       <pos x="-400" y="880"/>
@@ -4071,7 +4071,7 @@
           <string>A-RISC</string>
         </entry>
       </elementAttributes>
-      <pos x="40" y="800"/>
+      <pos x="20" y="800"/>
     </visualElement>
   </visualElements>
   <wires>
