@@ -40,7 +40,7 @@
 | `1111` | `LHH` | `$rd.hig <= $rs.hig` |
 
 ## 1.
-- use i4 in a multiplexer of the flags, if it is true, execute, otherwise, do not.
+- use i4 in a multiplexer of the flags, if it is true, execute, otherwise, do not. (sign extend i8)
 - all operatons change flags
 
 ## 2.
