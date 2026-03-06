@@ -1,13 +1,13 @@
 # A-RISC (Aderyn's RISC), Very simple 16 bit architecture
-- notice registers 4-13 are optional
+- notice registers 4-15 are optional
 
 # Register File
 | Index | MNemonic | Description | width (bits)
 |---|---|---|---|
 | 0 | `$pr` | Program Register (low bit is implicit) | 16 |
-| 1..13 | `$rN` | Register | 16 |
-| 14 | `$out` | Output Port | 16 |
-| 15 | `$in` | Input Port | 16 |
+| 1..13/15 | `$rN` | Register | 16 |
+| 14** for scrap mechanic | `$out` | Output Port (only in scrap mechanic) | 16 |
+| 15** for scrap mechanic | `$in` | Input Port (only in scrap mechanic) | 16 |
 
 # Flags
 | MNemonic | Description |
