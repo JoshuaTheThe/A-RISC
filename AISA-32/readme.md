@@ -21,6 +21,7 @@
 | `$od` | was result odd |
 | `$alw`| always |
 | `$usr` | User Mode |
+| `$big` | Using Big Endian |
 
 # Segmentation
 - im too lazy to make page tables, so this is better
@@ -83,6 +84,8 @@ segments: [Segments; 256];
 |`001101`| `SYSENTER` | `r30, r31 <= $pr, $cs, <= $pr, $cs <= 16, 0, $usr <= 0` trashes r30, r31 |
 |`001110`| `SYSEXIT` | `$pr, $cs <= r30, r31, $usr <= 1` nop in usermode |
 |`001111`| `IRET` | `$pr, $cs <= $pr', $cs'` nop in usermode |
+|`010000`| `BIG` | `$big <= 1` |
+|`010001`| `LITTLE` | `$big <= 0` |
 
 ## 1.
 - use i4 in a multiplexer of the flags, if it is true, execute, otherwise, do not. (sign extend i23)
@@ -125,3 +128,6 @@ segments: [Segments; 256];
 | `32` | hardware interrupt |
 | `48` | hardware interrupt 2 |
 | `64` | protection fault |
+
+# Endianness
+- Variable, based on the $big flag
