@@ -68,8 +68,6 @@ segments: [Segments; 256];
 
 | sub-op | mnemonic | function |
 |--------|----------|----------|
-|`000000`| `PUSH`   | `*($sr) <= $rs, $sr -= 4` |
-|`000001`| `POP`   | `$sr += 4, rd <= *($sr)` |
 |`000000`| `AL.32` | `$rd <= *($rs + i8)` (2), but set the BLOCK output pin high to block other cores |
 |`000001`| `AS.32` | `*($rd + i8) <= $rs` (2), but set the BLOCK output pin high to block other cores |
 |`000010`| `AL.16` | `$rd.low <= *($rs + i8).low` (2), but set the BLOCK output pin high to block other cores |
@@ -84,6 +82,8 @@ segments: [Segments; 256];
 |`001011`| `IRET` | `$pr, $cs, $flags <= $pr', $cs', $flags'` nop in usermode |
 |`001100`| `BIG` | `$big <= 1` |
 |`001101`| `LITTLE` | `$big <= 0` |
+|`001110`| `PUSH`   | `*($sr) <= $rs, $sr -= 4` |
+|`001111`| `POP`   | `$sr += 4, rd <= *($sr)` |
 
 ## 1.
 - (sign extend i23)
