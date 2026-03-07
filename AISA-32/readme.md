@@ -33,8 +33,8 @@
 struct Segment
 {
         phys_base: u32
-        phys_length: u29,
-        execute: bool, read: bool, write: bool
+        phys_length: u28,
+        execute: bool, read: bool, write: bool, prot: bool
 }
 
 segments: [Segments; 256];
@@ -51,12 +51,12 @@ segments: [Segments; 256];
 | `0101` | `LI` | `$rd <= i23` |
 | `0110` | `Bnc` | `$pr <= $pr + $i23, $lr <= $old_pr` conditionally (1) (but invert) |
 | `0111` | `Bcc` | `$pr <= $pr + $i23, $lr <= $old_pr` conditionally (1) |
-| `1000` | `L.32` | `$rd <= *($rs + i19)` (2) |
-| `1001` | `S.32` | `*($rd + i19) <= $rs` (2) |
-| `1010` | `L.16` | `$rd.low <= *($rs + i19).low`, rest of bits 0  (2) |
-| `1011` | `S.16` | `*($rd + i19).low <= $rs.low`, rest of bits 0  (2) |
-| `1100` | `L.8` | `$rd.low.low <= *($rs + i19).low.low`, rest of bits 0 (2) |
-| `1101` | `S.8` | `*($rd + i19).low.low <= $rs.low.low`, rest of bits 0 (2) |
+| `1000` | `L.32` | `$rd <= *i8:($rs + i11)` (2) |
+| `1001` | `S.32` | `*i8:($rd + i11) <= $rs` (2) |
+| `1010` | `L.16` | `$rd.low <= *i8:($rs + i11).low`, rest of bits 0  (2) |
+| `1011` | `S.16` | `*i8:($rd + i11).low <= $rs.low`, rest of bits 0  (2) |
+| `1100` | `L.8` | `$rd.low.low <= *i8:($rs + i11).low.low`, rest of bits 0 (2) |
+| `1101` | `S.8` | `*i8:($rd + i11).low.low <= $rs.low.low`, rest of bits 0 (2) |
 | `1110` | `EXT` | Extend |
 | `1111` | `LR` | `$rd <= $rs` |
 
@@ -97,7 +97,7 @@ segments: [Segments; 256];
 | `3:0` | opcode |
 | `8:4` | $rd or i4 |
 | `13:9` or `31:9` | $rs or `i23` |
-| `31:13` | `IF EXTEND (rs2, subop, i8) ELSEIF NOT ALU (i19) ELSE (rs2, i14)` |
+| `31:13` | `IF EXTEND (rs2, subop, i8) ELSEIF NOT ALU (i19) ELSE (rs2, i14) OR (i8, i11)` |
 
 ## note
 - in Bcc, we use $rd as the i4, so we can have i23 aswell
