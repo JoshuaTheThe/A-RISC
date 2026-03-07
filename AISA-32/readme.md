@@ -9,7 +9,7 @@
 | 2 | `$sr` | Stack Register | 32 |
 | 3..31 | `$rN` | Register | 32 |
 
-- also `$pr'` and `$cs'`
+- also `$pr'`, `$cs'` and `$flags'`
 
 # Flags
 | MNemonic | Description |
@@ -83,7 +83,7 @@ segments: [Segments; 256];
 |`001100`| `BFAR` | `$pr, $cs <= i19, $rs` nop in usermode |
 |`001101`| `SYSENTER` | `r30, r31, r29 <= $pr, $cs, $flags, <= $pr, $cs <= 16, 0, $usr <= 0` trashes r29, r30, r31 |
 |`001110`| `SYSEXIT` | `$pr, $cs <= r30, r31, r29, $usr <= 1` nop in usermode |
-|`001111`| `IRET` | `$pr, $cs <= $pr', $cs'` nop in usermode |
+|`001111`| `IRET` | `$pr, $cs, $flags <= $pr', $cs', $flags'` nop in usermode |
 |`010000`| `BIG` | `$big <= 1` |
 |`010001`| `LITTLE` | `$big <= 0` |
 
@@ -95,7 +95,7 @@ segments: [Segments; 256];
 - this being an offset is optional
 
 # Interrupts
-- uh `$pr'`, `$cs'` <= `$pr`, `$cs`, and `$pr`, `$cs` <= `32`, `0`
+- uh `$pr'`, `$cs'`, `$flags'` <= `$pr`, `$cs`, `$flags` and `$pr`, `$cs` <= `32`, `0`
 
 # opcode encoding
 | bits | desc |
