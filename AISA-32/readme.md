@@ -40,6 +40,9 @@ struct Segment
 segments: [Segments; 256];
 ```
 
+## prot
+- if `$usr` and accessing a segment with `prot=1`, interrupt but use address 64
+
 # Opcode
 | Code | MNemonic Prefix | Operation
 |---|---|---|
