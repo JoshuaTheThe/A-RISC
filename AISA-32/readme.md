@@ -89,7 +89,7 @@ segments: [Segments; 256];
 - this being an offset is optional
 
 # Interrupts
-- uh `$pr'`, `$cs'` <= `$pr`, `$cs`
+- uh `$pr'`, `$cs'` <= `$pr`, `$cs`, and `$pr`, `$cs` <= `32`, `0`
 
 # opcode encoding
 | bits | desc |
