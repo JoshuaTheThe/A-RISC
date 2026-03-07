@@ -116,3 +116,12 @@ segments: [Segments; 256];
 
 # Implementation
 - TODO
+
+## Vectors
+| adr | function |
+|------|----------|
+| `0`  | reset |
+| `16` | sysenter |
+| `32` | hardware interrupt |
+| `48` | hardware interrupt 2 |
+| `64` | protection fault |
