@@ -55,12 +55,12 @@ segments: [Segments; 256];
 | `0101` | `LI` | `$rd <= i23` |
 | `0110` | `Bnc` | `$pr <= $pr + $i23, $lr <= $old_pr` conditionally (1) (but invert) |
 | `0111` | `Bcc` | `$pr <= $pr + $i23, $lr <= $old_pr` conditionally (1) |
-| `1000` | `L.32` | `$rd <= *i8:($rs + i11)` (2) |
-| `1001` | `S.32` | `*i8:($rd + i11) <= $rs` (2) |
-| `1010` | `L.16` | `$rd.low <= *i8:($rs + i11).low`, rest of bits 0  (2) |
-| `1011` | `S.16` | `*i8:($rd + i11).low <= $rs.low`, rest of bits 0  (2) |
-| `1100` | `L.8` | `$rd.low.low <= *i8:($rs + i11).low.low`, rest of bits 0 (2) |
-| `1101` | `S.8` | `*i8:($rd + i11).low.low <= $rs.low.low`, rest of bits 0 (2) |
+| `1000` | `L.32` | `$rd <= *i8:($rs + i10)` (2) |
+| `1001` | `S.32` | `*i8:($rd + i10) <= $rs` (2) |
+| `1010` | `L.16` | `$rd.low <= *i8:($rs + i10).low`, rest of bits 0  (2) |
+| `1011` | `S.16` | `*i8:($rd + i10).low <= $rs.low`, rest of bits 0  (2) |
+| `1100` | `L.8` | `$rd.low.low <= *i8:($rs + i10).low.low`, rest of bits 0 (2) |
+| `1101` | `S.8` | `*i8:($rd + i10).low.low <= $rs.low.low`, rest of bits 0 (2) |
 | `1110` | `EXT` | Extend |
 | `1111` | `LR` | `$rd <= $rs` |
 
@@ -70,25 +70,23 @@ segments: [Segments; 256];
 |--------|----------|----------|
 |`000000`| `PUSH`   | `*($sr) <= $rs, $sr -= 4` |
 |`000001`| `POP`   | `$sr += 4, rd <= *($sr)` |
-|`000010`| `Rnc` | `$pr <= $lr` conditionally (1) (but invert) |
-|`000011`| `Rcc` | `$pr <= $lr` conditionally (1) |
-|`000100`| `AL.32` | `$rd <= *($rs + i8)` (2), but set the BLOCK output pin high to block other cores |
-|`000101`| `AS.32` | `*($rd + i8) <= $rs` (2), but set the BLOCK output pin high to block other cores |
-|`000110`| `AL.16` | `$rd.low <= *($rs + i8).low` (2), but set the BLOCK output pin high to block other cores |
-|`000111`| `AS.16` | `*($rd + i8).low <= $rs.low` (2), but set the BLOCK output pin high to block other cores |
-|`001000`| `AL.8` | `$rd.low.low <= *($rs + i8).low.low` (2), but set the BLOCK output pin high to block other cores |
-|`001001`| `AS.8` | `*($rd + i8).low.low <= $rs.low.low` (2), but set the BLOCK output pin high to block other cores |
-|`001010`| `SSEG` | `segments($rd) <= $rs, $rs2`, nop in usermode |
-|`001011`| `GSEG` | `$rd, $rs2 <= segments($rd)`, nop in usermode |
-|`001100`| `BFAR` | `$pr, $cs <= i19, $rs` nop in usermode |
-|`001101`| `SYSENTER` | `r30, r31, r29 <= $pr, $cs, $flags, <= $pr, $cs <= 16, 0, $usr <= 0` trashes r29, r30, r31 |
-|`001110`| `SYSEXIT` | `$pr, $cs <= r30, r31, r29, $usr <= 1` nop in usermode |
-|`001111`| `IRET` | `$pr, $cs, $flags <= $pr', $cs', $flags'` nop in usermode |
-|`010000`| `BIG` | `$big <= 1` |
-|`010001`| `LITTLE` | `$big <= 0` |
+|`000000`| `AL.32` | `$rd <= *($rs + i8)` (2), but set the BLOCK output pin high to block other cores |
+|`000001`| `AS.32` | `*($rd + i8) <= $rs` (2), but set the BLOCK output pin high to block other cores |
+|`000010`| `AL.16` | `$rd.low <= *($rs + i8).low` (2), but set the BLOCK output pin high to block other cores |
+|`000011`| `AS.16` | `*($rd + i8).low <= $rs.low` (2), but set the BLOCK output pin high to block other cores |
+|`000100`| `AL.8` | `$rd.low.low <= *($rs + i8).low.low` (2), but set the BLOCK output pin high to block other cores |
+|`000101`| `AS.8` | `*($rd + i8).low.low <= $rs.low.low` (2), but set the BLOCK output pin high to block other cores |
+|`000110`| `SSEG` | `segments($rd) <= $rs, $rs2`, nop in usermode |
+|`000111`| `GSEG` | `$rd, $rs2 <= segments($rd)`, nop in usermode |
+|`001000`| `BFAR` | `$pr, $cs <= i19, $rs` nop in usermode |
+|`001001`| `SYSENTER` | `r30, r31, r29 <= $pr, $cs, $flags, <= $pr, $cs <= 16, 0, $usr <= 0` trashes r29, r30, r31 |
+|`001010`| `SYSEXIT` | `$pr, $cs <= r30, r31, r29, $usr <= 1` nop in usermode |
+|`001011`| `IRET` | `$pr, $cs, $flags <= $pr', $cs', $flags'` nop in usermode |
+|`001100`| `BIG` | `$big <= 1` |
+|`001101`| `LITTLE` | `$big <= 0` |
 
 ## 1.
-- use i4 in a multiplexer of the flags, if it is true, execute, otherwise, do not. (sign extend i23)
+- use i5 in a multiplexer of the flags, if it is true, execute, otherwise, do not. (sign extend i23)
 - all operatons change flags
 
 ## 2.
@@ -97,16 +95,38 @@ segments: [Segments; 256];
 # Interrupts
 - uh `$pr'`, `$cs'`, `$flags'` <= `$pr`, `$cs`, `$flags` and `$pr`, `$cs` <= `32`, `0`
 
-# opcode encoding
+# opcode encoding (ADD, SUB, EOR, ORR, AND, SSEG, GSEG, LR, PUSH, POP, EXT)
 | bits | desc |
 |------|------|
 | `3:0` | opcode |
-| `8:4` | $rd or i4 |
-| `13:9` or `31:9` | $rs or `i23` |
-| `31:13` | `IF EXTEND (rs2, subop, i8) ELSEIF NOT ALU (i19) ELSE (rs2, i14) OR (i8, i11)` |
+| `8:4` | `$rd` |
+| `13:9` | `$rs` |
+| `18:14` | `$rs2` |
+| `21:19` | `$cond` |
+| `22` | invert `$cond` |
+| `25:23` | special mode |
+| `31:26` | special data, or EXT function |
+
+# opcode encoding (L.xx, S.xx, AL.xx, AS.xx)
+| bits | desc |
+|------|------|
+| `0:3`| opcode |
+| `8:4` | `$rd` |
+| `13:9` | `$rs` |
+| `21:14` | i8 |
+| `31:22` | i10 |
+
+# opcode encoding (LI)
+| bits | desc |
+|------|------|
+| `0:3`| opcode |
+| `8:4`| `$rd` |
+| `31:9` | i23|
+
+# opcode encoding
 
 ## note
-- in Bcc, we use $rd as the i4, so we can have i23 aswell
+- in Bcc, we use $rd as the i5, so we can have i23 aswell
 - fixed 32 bit opcode length
 
 # Memory
@@ -114,7 +134,7 @@ segments: [Segments; 256];
 
 # Notes
 - branch immediates are sign extended
-- i23,i4 in branch,memory access is sign extended
+- i23,i5 in branch,memory access is sign extended
 - the carry for ADD,SUB,XOR,ORR,AND is always the carry of the ADD/SUB node.
 
 # Implementation
