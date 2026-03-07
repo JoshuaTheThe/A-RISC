@@ -112,8 +112,7 @@ segments: [Segments; 256];
 |------|------|
 | `0`  | `LSL`, left shift by special_data |
 | `1`  | `LSR`, right shift by special_data |
-| `2`  | `ADD`, add special_data |
-| `3`  | `SUB`, subtract using special_data |
+| `2`  | `ADD`, add special_data, dont need sub cause its sign extended |
 
 # opcode encoding (L.xx, S.xx, AL.xx, AS.xx)
 | bits | desc |
