@@ -53,8 +53,8 @@ segments: [Segments; 256];
 | `0011` | `ORR` | `$rd <= $rs \| $rs2` |
 | `0100` | `AND` | `$rd <= $rs & $rs2` |
 | `0101` | `LI` | `$rd <= i23` |
-| `0110` | `Bnc` | `$pr <= $pr + $i23, $lr <= $old_pr` conditionally (1) (but invert) |
-| `0111` | `Bcc` | `$pr <= $pr + $i23, $lr <= $old_pr` conditionally (1) |
+| `0110` | `BLn` | `$pr <= $pr + $i23, $lr <= $old_pr` (1) |
+| `0111` | `BL` | `$pr <= $pr + $i23, $lr <= $old_pr` (1) |
 | `1000` | `L.32` | `$rd <= *i8:($rs + i10)` (2) |
 | `1001` | `S.32` | `*i8:($rd + i10) <= $rs` (2) |
 | `1010` | `L.16` | `$rd.low <= *i8:($rs + i10).low`, rest of bits 0  (2) |
@@ -86,7 +86,7 @@ segments: [Segments; 256];
 |`001101`| `LITTLE` | `$big <= 0` |
 
 ## 1.
-- use i5 in a multiplexer of the flags, if it is true, execute, otherwise, do not. (sign extend i23)
+- (sign extend i23)
 - all operatons change flags
 
 ## 2.
