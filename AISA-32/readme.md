@@ -104,8 +104,16 @@ segments: [Segments; 256];
 | `18:14` | `$rs2` |
 | `21:19` | `$cond` |
 | `22` | invert `$cond` |
-| `25:23` | special mode |
+| `25:23` | special mode, ignore in EXT |
 | `31:26` | special data, or EXT function |
+
+## Special
+| code | desc |
+|------|------|
+| `0`  | `LSL`, left shift by special_data |
+| `1`  | `LSR`, right shift by special_data |
+| `2`  | `ADD`, add special_data |
+| `3`  | `SUB`, subtract using special_data |
 
 # opcode encoding (L.xx, S.xx, AL.xx, AS.xx)
 | bits | desc |
