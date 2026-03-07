@@ -16,7 +16,7 @@
 |----------|-------------|
 | `$ze`    | if result was zero |
 | `$ov`| if result overflowed |
-| `$cy`    | if the result was over 65535 |
+| `$cy`    | if the result was over 2^32 - 1 |
 | `$sg`| sign of the result |
 | `$od` | was result odd |
 | `$alw`| always |
